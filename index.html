@@ -1,0 +1,126 @@
+<htlm>
+
+  <head>
+    <meta charset= "utf-8">
+    <title>Address-book</title>
+    <!-- CSS BOSTSTRAP-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css" type="text/css"/>
+    <!-- CSS STYLE-->
+    <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+    <script src="knockout/knockout-3.2.0.js"></script>
+    <script src="js/jquery-2.1.1.js"></script>
+  </head>
+
+  <body>
+    <div class= "container ">
+      <div class="row">
+        <nav class="navbar navbar-inverse borde" role="navigation">
+            <div class="navbar-header ">
+                <a class="navbar-brand" href="#">Inicio</a>
+            </div>
+      </div>
+      <div class = "jumbotron imagen borde">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <img src="images/mi.png" class="img-responsive"/>
+        </div>
+        <div class="col-md-2"></div>
+      </div> <!-- cierre de jumbotron --> 
+
+
+      <div class= "container ">
+        <div class="row">
+          <div class="col-md-1"></div>
+
+            <div class="col-md-10 ">
+
+
+                            <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary btn-lg input-group" data-toggle="modal" data-target="#myModal">
+                lista telefonica
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                      <h4 class="modal-title" id="myModalLabel">lista telefonica</h4>
+                    </div>
+                    <div class="modal-body">
+
+                          <!-- knockout comienzo de opoeracion  -->
+                          <div class="liveExample "> 
+    
+                            <h2>Contacts</h2>
+                            <div id='contactsList'>
+                                <table class='contactsEditor'>
+                                    <tr>
+                                        <th>First name</th>
+                                        <th>Last name</th>
+                                        <th>Phone numbers</th>
+                                    </tr>
+                                    <tbody data-bind="foreach: contacts">
+                                        <tr>
+                                            <td>
+                                                <input data-bind='value: firstName' />
+                                                <div><a href='#' data-bind='click: $root.removeContact'>Delete</a></div>
+                                            </td>
+                                            <td><input data-bind='value: lastName' /></td>
+                                            <td>
+                                                <table>
+                                                    <tbody data-bind="foreach: phones">
+                                                        <tr>
+                                                            <td><input data-bind='value: type' /></td>
+                                                            <td><input data-bind='value: number' /></td>
+                                                            <td><a href='#' data-bind='click: $root.removePhone'>Delete</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <a href='#' data-bind='click: $root.addPhone'>Add number</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                             
+                            <p>
+                                <button data-bind='click: addContact'>Add a contact</button>
+                                <button data-bind='click: save, enable: contacts().length > 0'>Save to JSON</button>
+                            </p>
+                             
+                            <textarea data-bind='value: lastSavedJson' rows='5' cols='60' disabled='disabled'> </textarea>
+                            
+                        </div><!--termino de knockout -->
+                          
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- termino del efeccto de boostrap-->
+
+
+
+            </div>
+
+
+          <div class="col-md-1"></div>
+        </div>
+      </div>
+
+
+
+    </div><!-- cierre de primer container  -->
+    <!-- js script -->
+    <script src="js/script.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+  </body>
+
+</htlm>
+
+
+
