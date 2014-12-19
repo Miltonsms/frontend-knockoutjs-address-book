@@ -16,6 +16,9 @@ img{
 .container .jumbotron .col-md-6{
 	color: #FFFFFF;
 }
+.oculto{
+	display: none;
+}
 
 body { font-family: arial; font-size: 14px; background: url(../images/m.jpg); }
 
@@ -33,3 +36,4 @@ body { font-family: arial; font-size: 14px; background: url(../images/m.jpg); }
 .liveExample td input { width: 8em; }
 
 li { list-style-type: disc; margin-left: 20px; }
+}

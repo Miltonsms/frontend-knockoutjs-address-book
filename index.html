@@ -39,7 +39,7 @@
 
             <div class="col-md-9 ">
 
-              
+
                             <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary btn-lg input-group" data-toggle="modal" data-target="#myModal">
                 instructions
@@ -85,7 +85,14 @@
                 <div class="liveExample"> 
 
                   <h2>Contacts</h2>
-               
+                  <!-- radio de eliminacion con efecto-->
+                  <label>
+                      <input type="checkbox"id="inlineCheckbox1"value="option1"class="pull-right cero">Eliminar Contacto
+                  </label>
+                  <label>
+                      <input type="checkbox"id="inlineCheckbox1"value="option1"class="pull-right uno">Agregar un número nuevo a contacto
+                  </label>
+                  <!-- cierre de efecto-->
                   <div id='contactsList'>
                   <div class="table-responsive">
                       <table class='contactsEditor'>
@@ -97,8 +104,8 @@
                           <tbody data-bind="foreach: contacts">
                               <tr>
                                   <td>
-                                      <input data-bind='value: firstName' class="form-control"/>
-                                      <div><a href='#' data-bind='click: $root.removeContact'>Delete</a></div>
+                                      <input data-bind='value: firstName' class="form-control "/>
+                                      <div><a href='#' data-bind='click: $root.removeContact'class="oculto" id="cero">Delete</a></div>
                                   </td>
                                   <td><input data-bind='value: lastName' class="form-control"/></td>
                                   <td>
@@ -107,12 +114,12 @@
                                               <tr>
                                                   <td><input data-bind='value: type' class="form-control"/></td>
                                                   <td><input data-bind='value: number' class="form-control"/></td>
-                                                  <td><a href='#' data-bind='click: $root.removePhone'>Delete</a></td>
+                                                  <td ><a href='#' data-bind='click: $root.removePhone' class="oculto" id="cero">Delete</a></td>
                                               </tr>
                                           </tbody>
                                       </table>
                                      
-                                      <a href='#' data-bind='click: $root.addPhone'>Add number</a>
+                                      <td><a href='#' data-bind='click: $root.addPhone' class="oculto" id="uno">Add_number</a></td> 
                                   </td>
                               </tr>
                           </tbody>
@@ -120,7 +127,7 @@
                   </div><!--cierre de table responsive -->
                     </div>
                   <p>
-                      <button data-bind='click: addContact'>Add a contact</button>
+                      <button data-bind='click: addContact' >Add a contact</button>
                       <button data-bind='click: save, enable: contacts().length > 0'>Save to JSON</button>
                   </p>
                    <div class="table-responsive">

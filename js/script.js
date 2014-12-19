@@ -1,7 +1,7 @@
 var initialData = [
     { firstName: "Gaby", lastName: "Ramirez", phones: [
         { type: "Mobile", number: "(555) 121-2121" },
-        { type: "Home", number: "(555) 123-4567"}]
+        ]
     },
     { firstName: "Saul", lastName: "Ramirez", phones: [
         { type: "Mobile", number: "(555) 444-2222" },
@@ -46,3 +46,16 @@ var ContactsModel = function(contacts) {
 };
  
 ko.applyBindings(new ContactsModel(initialData));
+
+$(document).ready(function()
+    {
+    $(".cero").click(function () {  
+      $('#cero ').toggle("slow");
+      });
+     });
+$(document).ready(function()
+    {
+    $(".uno").click(function () {  
+      $('#uno ').toggle("slow");
+      });
+     });
