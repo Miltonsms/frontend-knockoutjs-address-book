@@ -17,33 +17,37 @@
       <div class="row">
         <nav class="navbar navbar-inverse borde" role="navigation">
             <div class="navbar-header ">
-                <a class="navbar-brand" href="#">Inicio</a>
+                <a class="navbar-brand" href="https://github.com/Miltonsms/frontend-knockoutjs-address-book">Gihub</a>
             </div>
       </div>
       <div class = "jumbotron imagen borde">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <img src="images/mi.png" class="img-responsive"/>
+        <div class="col-md-3">
+          <img src="images/mi.png" class="img-responsive"/>  
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-6">
+          <h1 class="color">Address Book with KnockoutJS</h1>
+        </div>
+        <div class="col-md-3">
+          <img src="images/mi.png" class="img-responsive"/> 
+        </div>
       </div> <!-- cierre de jumbotron --> 
 
 
       <div class= "container ">
         <div class="row">
-          <div class="col-md-1"></div>
+          <div class="col-md-2"></div>
 
-            <div class="col-md-10 ">
+            <div class="col-md-9 ">
 
-
+              
                             <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary btn-lg input-group" data-toggle="modal" data-target="#myModal">
-                lista telefonica
+                instructions
               </button>
 
               <!-- Modal -->
               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog lorgo">
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -51,49 +55,21 @@
                     </div>
                     <div class="modal-body">
 
-                          <!-- knockout comienzo de opoeracion  -->
-                          <div class="liveExample "> 
-    
-                            <h2>Contacts</h2>
-                            <div id='contactsList'>
-                                <table class='contactsEditor'>
-                                    <tr>
-                                        <th>First name</th>
-                                        <th>Last name</th>
-                                        <th>Phone numbers</th>
-                                    </tr>
-                                    <tbody data-bind="foreach: contacts">
-                                        <tr>
-                                            <td>
-                                                <input data-bind='value: firstName' />
-                                                <div><a href='#' data-bind='click: $root.removeContact'>Delete</a></div>
-                                            </td>
-                                            <td><input data-bind='value: lastName' /></td>
-                                            <td>
-                                                <table>
-                                                    <tbody data-bind="foreach: phones">
-                                                        <tr>
-                                                            <td><input data-bind='value: type' /></td>
-                                                            <td><input data-bind='value: number' /></td>
-                                                            <td><a href='#' data-bind='click: $root.removePhone'>Delete</a></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <a href='#' data-bind='click: $root.addPhone'>Add number</a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                             
-                            <p>
-                                <button data-bind='click: addContact'>Add a contact</button>
-                                <button data-bind='click: save, enable: contacts().length > 0'>Save to JSON</button>
-                            </p>
-                             
-                            <textarea data-bind='value: lastSavedJson' rows='5' cols='60' disabled='disabled'> </textarea>
-                            
-                        </div><!--termino de knockout -->
+                          
+                      <h2>As a user, I must be able to view my contact list, with first and last name, and phone numbers.
+                      <br>
+                      <br>
+                      As a user, I must be able to add a new contact with all his information. 
+                      <br>
+                      <br>
+                      As a user I must be able to delete contacts from my address book. 
+                      <br>
+                      <br>
+                      As a user I must be able to add and remove phone numbers to any individual contact.
+                      <br>
+                      <br> 
+                      As a backend developer, I must receive all the address book contacts as a JSON so I can store it in a database.</h2>
+
                           
                     </div>
                     <div class="modal-footer">
@@ -104,8 +80,58 @@
               </div><!-- termino del efeccto de boostrap-->
 
 
+    <!-- knockout comienzo de opoeracion  -->
+               
+                <div class="liveExample"> 
 
-            </div>
+                  <h2>Contacts</h2>
+               
+                  <div id='contactsList'>
+                  <div class="table-responsive">
+                      <table class='contactsEditor'>
+                          <tr>
+                              <th>First name</th>
+                              <th>Last name</th>
+                              <th>Phone numbers</th>
+                          </tr>
+                          <tbody data-bind="foreach: contacts">
+                              <tr>
+                                  <td>
+                                      <input data-bind='value: firstName' class="form-control"/>
+                                      <div><a href='#' data-bind='click: $root.removeContact'>Delete</a></div>
+                                  </td>
+                                  <td><input data-bind='value: lastName' class="form-control"/></td>
+                                  <td>
+                                      <table>
+                                          <tbody data-bind="foreach: phones">
+                                              <tr>
+                                                  <td><input data-bind='value: type' class="form-control"/></td>
+                                                  <td><input data-bind='value: number' class="form-control"/></td>
+                                                  <td><a href='#' data-bind='click: $root.removePhone'>Delete</a></td>
+                                              </tr>
+                                          </tbody>
+                                      </table>
+                                     
+                                      <a href='#' data-bind='click: $root.addPhone'>Add number</a>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div><!--cierre de table responsive -->
+                    </div>
+                  <p>
+                      <button data-bind='click: addContact'>Add a contact</button>
+                      <button data-bind='click: save, enable: contacts().length > 0'>Save to JSON</button>
+                  </p>
+                   <div class="table-responsive">
+                    <textarea data-bind='value: lastSavedJson' rows='5' cols='60' disabled='disabled'> </textarea>
+                  </div>
+              </div><!--termino de knockout -->
+
+    
+
+
+            </div><!-- ternimo de div principal de 9 -->
 
 
           <div class="col-md-1"></div>
@@ -121,6 +147,4 @@
   </body>
 
 </htlm>
-
-
 

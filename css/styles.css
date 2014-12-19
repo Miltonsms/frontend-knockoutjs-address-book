@@ -1,28 +1,25 @@
-body{
-	background: url(../images/m.jpg);
-	}
+
 .imagen{
-overflow-x:hidden; 
-background: url(../images/milton.jpg);
+	overflow-x:hidden; 
+	background: url(../images/milton.jpg);
 	}
 .ct{ 
 	text-align:center;
 	font-family: Vivaldi;
 }
 img{ 
-	width:20%;
+	width:150px;
 	}
 .borde{
 	border: 4px solid #BDBDBD;
 	}
-h1{
-	color:#ffffff;
-
+.container .jumbotron .col-md-6{
+	color: #FFFFFF;
 }
 
-body { font-family: arial; font-size: 14px; }
+body { font-family: arial; font-size: 14px; background: url(../images/m.jpg); }
 
-.liveExample { padding: 1em; background-color: #EEEEDD; border: 1px solid #CCC; max-width: 655px; }
+.liveExample { padding: 1em; background-color: #D8D8D8; border: 1px solid #CCC; max-width: 655px; }
 .liveExample input { font-family: Arial; }
 .liveExample b { font-weight: bold; }
 .liveExample p { margin-top: 0.9em; margin-bottom: 0.9em; }
